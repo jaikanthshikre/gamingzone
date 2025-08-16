@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import imageone from "../assets/images/bannerone.png";
+import imageone from "../assets/images/horror.png";
 
 const slides = [
   {
