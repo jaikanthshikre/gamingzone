@@ -1,8 +1,8 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import { FaWhatsapp, FaGamepad, FaTrophy, FaFire, FaGift, FaStar, FaBars, FaTimes } from 'react-icons/fa';
-
+import { FaWhatsapp,  FaTrophy, FaFire, FaGift, FaStar, FaBars, FaTimes } from 'react-icons/fa';
+import logo from '../assets/images/logo.jpeg'
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,9 +25,9 @@ export const Navbar = () => {
   }, []);
 
   const offers = [
-    { icon: FaFire, text: "🔥 GET 500% WELCOME BONUS", color: "text-orange-400" },
+    { icon: FaFire, text: "🔥 GET upto 10% WELCOME BONUS", color: "text-orange-400" },
     { icon: FaTrophy, text: "🏆 WIN BIG - DAILY JACKPOTS AVAILABLE", color: "text-yellow-400" },
-    { icon: FaGift, text: "🎁 FREE ₹1000 ON FIRST DEPOSIT", color: "text-green-400" },
+    { icon: FaGift, text: "🎁 FREE upto ₹1000 ON FIRST DEPOSIT", color: "text-green-400" },
     { icon: FaStar, text: "⭐ VIP MEMBERSHIP - EXCLUSIVE REWARDS", color: "text-purple-400" },
     { icon: FaFire, text: "🎯 INSTANT WITHDRAWALS - 24/7 SUPPORT", color: "text-blue-400" },
     { icon: FaTrophy, text: "💎 PREMIUM BETTING IDS AVAILABLE NOW", color: "text-pink-400" },
@@ -85,23 +85,23 @@ export const Navbar = () => {
 
         <div className="relative flex items-center justify-between py-2 sm:py-4 md:px-9 px-2">
           {/* Logo */}
-          <div className="flex items-center group cursor-pointer mb-3 sm:mb-0">
+          <div className="flex items-center group cursor-pointer ">
             <div className="relative mr-3 sm:mr-4">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full blur-md opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative bg-gradient-to-r from-gray-800 to-gray-700 p-2 sm:p-3 rounded-full border border-cyan-400/50">
-                <FaGamepad className="text-cyan-400 text-xl transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-300" />
-              </div>
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full"></div>
+     
+           
+              <img src={logo} alt="" className='h-15'/>
+            
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-300 rounded-full animate-ping"></div>
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-300 rounded-full"></div>
             </div>
             <div>
               <NavLink href="/">
-              <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 font-bold sm:text-2xl text-lg uppercase tracking-wider drop-shadow-lg">
+              <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 font-bold sm:text-2xl text-sm uppercase tracking-wider drop-shadow-lg">
                 GamingZoneBook
               </h1>
-              <p className="text-gray-400 text-xs uppercase tracking-widest mt-0.5 font-medium">
+              <h6 className="text-gray-400 text-[10px] uppercase  mt-0.5 ">
                 Premium Gaming Platform
-              </p></NavLink>
+              </h6></NavLink>
             </div>
           </div>
 
@@ -125,9 +125,9 @@ export const Navbar = () => {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
               >
-                <div className="relative flex items-center gap-2 sm:gap-3 px-2 sm:px-2 py-2 sm:py-3 rounded-2xl bg-gradient-to-r from-green-600 via-emerald-500 to-green-500 text-white font-bold text-xs sm:text-sm transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-green-500/50 border border-green-400/50">
+                <div className="relative flex items-center gap-2 sm:gap-3 px-3 md:px-2 py-2 sm:py-3 rounded-xl bg-gradient-to-r from-green-600 via-emerald-500 to-green-500 text-white font-bold text-xs sm:text-sm transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-green-500/50 border border-green-400/50">
                   <FaWhatsapp className={`text-xl transition-all duration-300 ${isHovered ? 'animate-bounce scale-110' : ''}`} />
-                  <div className="flex leading-tight">
+                  <div className="flex leading-tight ">
                     <span className="uppercase tracking-wide">GET ID</span>
                   </div>
                 </div>
@@ -164,28 +164,28 @@ export const Navbar = () => {
             <div className="rounded-2xl border border-gray-700/60 bg-gray-800/70 backdrop-blur-md shadow-xl">
               <nav className="grid gap-1 p-2 text-sm font-semibold text-gray-200 uppercase tracking-wide">
                 <a
-                  href="#cricket"
+                  href="cricket"
                   className="px-3 py-2 rounded-lg hover:bg-gray-700/60 hover:text-cyan-400 transition"
                   onClick={() => setMobileOpen(false)}
                 >
                   Cricket
                 </a>
                 <a
-                  href="#casino"
+                  href="casino"
                   className="px-3 py-2 rounded-lg hover:bg-gray-700/60 hover:text-cyan-400 transition"
                   onClick={() => setMobileOpen(false)}
                 >
                   Casino
                 </a>
                 <a
-                  href="#tennis"
+                  href="tennis"
                   className="px-3 py-2 rounded-lg hover:bg-gray-700/60 hover:text-cyan-400 transition"
                   onClick={() => setMobileOpen(false)}
                 >
                   Tennis
                 </a>
                 <a
-                  href="#football"
+                  href="football"
                   className="px-3 py-2 rounded-lg hover:bg-gray-700/60 hover:text-cyan-400 transition"
                   onClick={() => setMobileOpen(false)}
                 >
