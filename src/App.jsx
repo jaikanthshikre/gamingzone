@@ -4,6 +4,10 @@ import { Home } from './Pages/Home'
 import { Navbar } from './Component/Navbar'
 import Footer from './Component/Footer'
 import FloatingWhatsApp from './Component/FloatingIcon'
+import Cricket from './Pages/Cricket'
+import Tennis from './Pages/Tennis'
+import Football from './Pages/Football'
+import Casino from './Pages/Casino'
 
 export const App = () => {
   return (
@@ -12,6 +16,10 @@ export const App = () => {
     <Navbar/>
     <Routes>
       <Route path='/' element={<Home/>}/>
+      <Route path='/cricket' element={<Cricket/>}/>
+      <Route path='/tennis' element={<Tennis/>}/>
+      <Route path='/football' element={<Football/>}/>
+      <Route path='/casino' element={<Casino/>}/>
     </Routes>
     <FloatingWhatsApp/>
     <Footer/>

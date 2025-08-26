@@ -48,7 +48,7 @@ const CounterSection = () => {
   }, []);
 
   return (
-    <div className="w-full bg-gradient-to-r from-black via-gray-900 to-black text-white py-15 px-4">
+    <div className="w-full bg-gradient-to-r from-gray-900 via-red-900 to-gray-900 text-white py-15 px-4">
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-center">
         
         {/* Card 1 */}

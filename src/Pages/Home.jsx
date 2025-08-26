@@ -17,7 +17,7 @@ import TestimonialSection from '../Component/Testimonials'
 export const Home = () => {
   return (
     <>
-    <div className='pt-20 mt-9 bg-gray-950'>
+    <div className='pt-20 mt-9 bg-gradient-to-r from-gray-900 via-red-900 to-gray-900'>
     <HeroCarousel />
      <MarqueeSection/>
     <CounterSection/>

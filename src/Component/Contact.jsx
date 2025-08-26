@@ -3,7 +3,7 @@ import imageone from "../assets/images/contactimg.png";
 
 export const Contact = () => {
   return (
-    <div className="bg-gray-900 text-white">
+    <div className="bg-gradient-to-r from-gray-900 via-red-900 to-gray-900 text-white">
       <div className="container flex mx-auto flex-col md:flex-row items-center gap-8 max-w-6xl py-12 px-6">
         
         {/* Left Content */}

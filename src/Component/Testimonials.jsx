@@ -26,7 +26,7 @@ const testimonials = [
 
 const TestimonialSection = () => {
   return (
-    <div className="bg-gray-950 text-white py-20 px-6">
+    <div className="bg-gradient-to-r from-gray-900 via-red-900 to-gray-900 text-white py-20 px-6">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-2xl md:text-4xl font-bold text-yellow-400 mb-12">
           What Our Players Say About GamingZoneBook

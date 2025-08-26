@@ -36,7 +36,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gray-800">
+    <section className="py-20 px-6 bg-gradient-to-r from-gray-900 via-red-900 to-gray-900">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-2xl md:text-4xl font-bold mb-12 text-white">
           Why Choose <span className="text-yellow-500">Gaming Zone Book</span>

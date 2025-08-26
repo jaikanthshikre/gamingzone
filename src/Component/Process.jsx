@@ -42,7 +42,7 @@ const BettingRegistrationSteps = () => {
       AOS.init({ duration: 1000, once: true });
   }, []);
   return (
-    <div className="bg-gray-900 text-white py-13 px-4 md:px-16">
+    <div className="bg-gradient-to-r from-gray-900 via-red-900 to-gray-900 text-white py-13 px-4 md:px-16">
       <h2 className="text-2xl md:text-4xl font-bold text-center mb-16 uppercase text-yellow-400">
         How to Register on Our Betting Platform
       </h2>

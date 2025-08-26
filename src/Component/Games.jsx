@@ -59,7 +59,7 @@ const CardsGrid = () => {
     }, []);
   return (
     <>
-    <div className="bg-gray-900 text-white py-2  px-4">
+    <div className="bg-gradient-to-r from-gray-900 via-red-900 to-gray-900 text-white py-2  px-4">
         <h1 className='text-yellow-400 font-bold text-3xl text-center py-8'>Games We Provide on Gaming Zone Book </h1>
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {cardsData.map((card, index) => (

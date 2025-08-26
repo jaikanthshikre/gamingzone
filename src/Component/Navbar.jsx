@@ -1,16 +1,27 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import { FaWhatsapp, FaGamepad, FaTrophy, FaFire, FaGift, FaStar } from 'react-icons/fa';
+import { FaWhatsapp, FaGamepad, FaTrophy, FaFire, FaGift, FaStar, FaBars, FaTimes } from 'react-icons/fa';
+
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Close mobile menu if viewport grows past sm
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 640) setMobileOpen(false);
+    };
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
   }, []);
 
   const offers = [
@@ -22,10 +33,20 @@ export const Navbar = () => {
     { icon: FaTrophy, text: "💎 PREMIUM BETTING IDS AVAILABLE NOW", color: "text-pink-400" },
   ];
 
+  const NavLink = ({ href, children, onClick }) => (
+    <a
+      href={href}
+      className="hover:text-cyan-400 transition-colors"
+      onClick={onClick}
+    >
+      {children}
+    </a>
+  );
+
   return (
     <div className="fixed top-0 w-full z-50">
-      {/* Offers Banner (unchanged height) */}
-      <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 border-b border-cyan-500/30 overflow-hidden">
+      {/* Offers Banner */}
+      <div className="bg-gradient-to-r from-gray-900 via-red-900 to-gray-900 border-b border-red-500/30 overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap py-2">
           {[...offers, ...offers, ...offers].map((offer, idx) => (
             <div key={idx} className="flex items-center mx-8 text-sm font-semibold">
@@ -33,7 +54,8 @@ export const Navbar = () => {
               <span className="text-white">{offer.text}</span>
               <div className="ml-4 flex">
                 {[...Array(3)].map((_, i) => (
-                  <div key={i}
+                  <div
+                    key={i}
                     className="w-1 h-1 bg-yellow-400 rounded-full mx-0.5 animate-pulse"
                     style={{ animationDelay: `${i * 0.2}s` }}
                   />
@@ -44,12 +66,12 @@ export const Navbar = () => {
         </div>
       </div>
 
-      {/* Main Navbar (reduced height + responsive) */}
+      {/* Main Navbar */}
       <nav
         className={`transition-all duration-500 ${
           isScrolled
             ? 'bg-gray-900/95 backdrop-blur-xl shadow-2xl border-b border-gray-700/50'
-            : 'bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900'
+            : 'bg-gradient-to-r from-gray-900 via-red-900 to-gray-900'
         }`}
       >
         {/* Decorative particles (hidden on mobile) */}
@@ -59,9 +81,9 @@ export const Navbar = () => {
         </div>
 
         {/* Glowing bottom border */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-60" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-400 to-transparent opacity-60" />
 
-        <div className="relative flex items-center justify-between py-2 sm:py-4 md:px-9 px-2 ">
+        <div className="relative flex items-center justify-between py-2 sm:py-4 md:px-9 px-2">
           {/* Logo */}
           <div className="flex items-center group cursor-pointer mb-3 sm:mb-0">
             <div className="relative mr-3 sm:mr-4">
@@ -73,40 +95,104 @@ export const Navbar = () => {
               <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full"></div>
             </div>
             <div>
+              <NavLink href="/">
               <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 font-bold sm:text-2xl text-lg uppercase tracking-wider drop-shadow-lg">
                 GamingZoneBook
               </h1>
               <p className="text-gray-400 text-xs uppercase tracking-widest mt-0.5 font-medium">
                 Premium Gaming Platform
-              </p>
+              </p></NavLink>
             </div>
           </div>
 
-          {/* WhatsApp CTA */}
-          <div className="relative">
-            <a
-              href="https://wa.me/919818462079?text=Hi%2C%20I%20want%20to%20get%20an%20online%20betting%20ID%20on%20GamingZoneBook."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative overflow-hidden"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-              <div className="relative flex items-center gap-2 sm:gap-3 px-2 sm:px-2 py-2 sm:py-3 rounded-2xl bg-gradient-to-r from-green-600 via-emerald-500 to-green-500 text-white font-bold text-xs sm:text-sm transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-green-500/50 border border-green-400/50">
-                <FaWhatsapp className={`text-xl transition-all duration-300 ${isHovered ? 'animate-bounce scale-110' : ''}`} />
-                <div className="flex flex-col leading-tight">
-                  <span className="uppercase tracking-wide">GET ID NOW</span>
-                  <span className="text-[10px] opacity-90">Instant Setup</span>
+          {/* Desktop navigation */}
+          <div className="hidden sm:flex gap-6 text-sm font-semibold text-gray-300 uppercase tracking-wide">
+            <NavLink href="cricket">Cricket</NavLink>
+            <NavLink href="casino">Casino</NavLink>
+            <NavLink href="tennis">Tennis</NavLink>
+            <NavLink href="football">Football</NavLink>
+          </div>
+
+          {/* Right cluster: WhatsApp + Mobile hamburger */}
+          <div className="flex items-center gap-2">
+            {/* WhatsApp CTA */}
+            <div className="relative">
+              <a
+                href="https://wa.me/919818462079?text=Hi%2C%20I%20want%20to%20get%20an%20online%20betting%20ID%20on%20GamingZoneBook."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative overflow-hidden"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
+                <div className="relative flex items-center gap-2 sm:gap-3 px-2 sm:px-2 py-2 sm:py-3 rounded-2xl bg-gradient-to-r from-green-600 via-emerald-500 to-green-500 text-white font-bold text-xs sm:text-sm transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-green-500/50 border border-green-400/50">
+                  <FaWhatsapp className={`text-xl transition-all duration-300 ${isHovered ? 'animate-bounce scale-110' : ''}`} />
+                  <div className="flex leading-tight">
+                    <span className="uppercase tracking-wide">GET ID</span>
+                  </div>
                 </div>
-              </div>
-              {/* Glow layers */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-green-500 to-emerald-400 opacity-20 blur-lg scale-110 group-hover:opacity-40 transition-all duration-300"></div>
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-green-400 to-emerald-300 opacity-10 blur-xl scale-125 group-hover:opacity-30 transition-all duration-300"></div>
-            </a>
-            {/* Floating particles (hidden on mobile) */}
-            <div className="absolute -top-2 -right-2 w-2 h-2 bg-yellow-400 rounded-full animate-ping hidden sm:block"></div>
-            <div className="absolute -bottom-2 -left-2 w-2 h-2 bg-green-400 rounded-full animate-ping delay-300 hidden sm:block"></div>
-            <div className="absolute top-1/2 -left-5 w-1 h-1 bg-cyan-400 rounded-full animate-ping delay-500 hidden sm:block"></div>
+                {/* Glow layers */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-green-500 to-emerald-400 opacity-20 blur-lg scale-110 group-hover:opacity-40 transition-all duration-300"></div>
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-green-400 to-emerald-300 opacity-10 blur-xl scale-125 group-hover:opacity-30 transition-all duration-300"></div>
+              </a>
+              {/* Floating particles (hidden on mobile) */}
+              <div className="absolute -top-2 -right-2 w-2 h-2 bg-yellow-400 rounded-full animate-ping hidden sm:block"></div>
+              <div className="absolute -bottom-2 -left-2 w-2 h-2 bg-green-400 rounded-full animate-ping delay-300 hidden sm:block"></div>
+              <div className="absolute top-1/2 -left-5 w-1 h-1 bg-cyan-400 rounded-full animate-ping delay-500 hidden sm:block"></div>
+            </div>
+
+            {/* Mobile hamburger (sm:hidden) */}
+            <button
+              type="button"
+              className="sm:hidden inline-flex items-center justify-center p-2 rounded-xl border border-gray-700/60 bg-gray-800/70 text-gray-200 hover:text-white hover:border-red-500/60 focus:outline-none focus:ring-2 focus:ring-red-500/50 transition"
+              aria-label="Toggle navigation"
+              aria-expanded={mobileOpen}
+              onClick={() => setMobileOpen(v => !v)}
+            >
+              {mobileOpen ? <FaTimes className="text-lg" /> : <FaBars className="text-lg" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile dropdown menu */}
+        <div
+          className={`sm:hidden overflow-hidden transition-[max-height,opacity] duration-300 ${
+            mobileOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
+          }`}
+        >
+          <div className="px-3 pb-3 pt-1">
+            <div className="rounded-2xl border border-gray-700/60 bg-gray-800/70 backdrop-blur-md shadow-xl">
+              <nav className="grid gap-1 p-2 text-sm font-semibold text-gray-200 uppercase tracking-wide">
+                <a
+                  href="#cricket"
+                  className="px-3 py-2 rounded-lg hover:bg-gray-700/60 hover:text-cyan-400 transition"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Cricket
+                </a>
+                <a
+                  href="#casino"
+                  className="px-3 py-2 rounded-lg hover:bg-gray-700/60 hover:text-cyan-400 transition"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Casino
+                </a>
+                <a
+                  href="#tennis"
+                  className="px-3 py-2 rounded-lg hover:bg-gray-700/60 hover:text-cyan-400 transition"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Tennis
+                </a>
+                <a
+                  href="#football"
+                  className="px-3 py-2 rounded-lg hover:bg-gray-700/60 hover:text-cyan-400 transition"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Football
+                </a>
+              </nav>
+            </div>
           </div>
         </div>
       </nav>
