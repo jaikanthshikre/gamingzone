@@ -168,17 +168,12 @@ export default function Football() {
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
-              href="#get-started"
+              href="https://wa.link/iwantgamingzoneid"
               className="inline-flex items-center gap-2 rounded-2xl border border-red-500/40 bg-gradient-to-r from-red-600 via-red-500 to-red-600 px-5 py-3 font-semibold text-white shadow-lg shadow-red-900/20 hover:scale-[1.02] transition"
             >
-              Get Started
+              Get ID Now
             </a>
-            <a
-              href="#responsible"
-              className="inline-flex items-center gap-2 rounded-2xl border border-red-500/30 bg-gray-800/70 px-5 py-3 font-semibold text-red-200 hover:text-white hover:border-red-400 transition"
-            >
-              Responsible Gaming
-            </a>
+           
           </div>
         </Section>
       </div>

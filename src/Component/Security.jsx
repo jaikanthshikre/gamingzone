@@ -5,7 +5,7 @@ import {
   FaMoneyBillWave,
   FaHeadset,
 } from "react-icons/fa";
-import imageone from "../assets/images/bettingimage.jpg"; // Replace with your own image
+import imageone from "../assets/images/bettingimage.webp"; // Replace with your own image
 
 export default function WhyChooseUs() {
   const features = [

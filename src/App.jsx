@@ -1,13 +1,14 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Home } from './Pages/Home'
-import { Navbar } from './Component/Navbar'
+
 import Footer from './Component/Footer'
 import FloatingWhatsApp from './Component/FloatingIcon'
 import Cricket from './Pages/Cricket'
 import Tennis from './Pages/Tennis'
 import Football from './Pages/Football'
 import Casino from './Pages/Casino'
+import { Navbar } from './Component/Navbar'
 
 export const App = () => {
   return (

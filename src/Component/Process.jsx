@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import imageone from "../assets/images/1.png"
-import imagetwo from "../assets/images/2.png"
+import imageone from "../assets/images/1.webp"
+import imagetwo from "../assets/images/2.webp"
 import imagethree from "../assets/images/3.png"
-import imagefour from "../assets/images/4.png"
+import imagefour from "../assets/images/4.webp"
 
 const images = [imageone, imagetwo, imagethree, imagefour];
 

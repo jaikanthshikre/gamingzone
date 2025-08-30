@@ -1,9 +1,12 @@
 // MarqueeSection.jsx
+
 import React from 'react';
 import Marquee from 'react-fast-marquee';
 
 const MarqueeSection = () => {
   return (
+    <>
+   
     <div className="w-full bg-black py-6">
       <Marquee speed={50} gradient={false} pauseOnHover={true} className="text-yellow-500 text-2xl font-semibold">
         <span className="mx-8">🚀 20 Lakh+ Online Players</span>
@@ -13,6 +16,7 @@ const MarqueeSection = () => {
         <span className="mx-8">🔒 Secure & Trusted Platform</span>
       </Marquee>
     </div>
+     </>
   );
 };
 

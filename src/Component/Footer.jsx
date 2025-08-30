@@ -12,7 +12,7 @@ const Footer = () => {
           </p>
           <div className="flex space-x-4 mt-4">
            <a
-  href="https://wa.me/919818462079?text=Hi%2C%20I%20want%20to%20get%20an%20online%20betting%20ID%20on%20GamingZoneBook."
+  href="https://wa.link/iwantgamingzoneid"
   target="_blank"
   rel="noopener noreferrer"
   className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500 transition inline-block"
@@ -26,20 +26,20 @@ const Footer = () => {
         <div>
           <h4 className="text-yellow-400 font-bold mb-4">Quick Links</h4>
           <ul className="space-y-2 text-sm text-white/80">
-            <li><a href="#" className="hover:text-yellow-400">Home</a></li>
-            <li><a href="#" className="hover:text-yellow-400">Sports Betting</a></li>
-            <li><a href="#" className="hover:text-yellow-400">Casino</a></li>
-            <li><a href="#" className="hover:text-yellow-400">Promotions</a></li>
+            <li><a href="https://wa.link/iwantgamingzoneid" className="hover:text-yellow-400">Home</a></li>
+            <li><a href="https://wa.link/iwantgamingzoneid" className="hover:text-yellow-400">Sports Betting</a></li>
+            <li><a href="https://wa.link/iwantgamingzoneid" className="hover:text-yellow-400">Casino</a></li>
+            <li><a href="https://wa.link/iwantgamingzoneid" className="hover:text-yellow-400">Promotions</a></li>
           </ul>
         </div>
 
         <div>
           <h4 className="text-yellow-400 font-bold mb-4">Legal</h4>
           <ul className="space-y-2 text-sm text-white/80">
-            <li><a href="#" className="hover:text-yellow-400">Terms & Conditions</a></li>
-            <li><a href="#" className="hover:text-yellow-400">Privacy Policy</a></li>
-            <li><a href="#" className="hover:text-yellow-400">Responsible Gambling</a></li>
-            <li><a href="#" className="hover:text-yellow-400">FAQs</a></li>
+            <li><a href="https://wa.link/iwantgamingzoneid" className="hover:text-yellow-400">Terms & Conditions</a></li>
+            <li><a href="https://wa.link/iwantgamingzoneid" className="hover:text-yellow-400">Privacy Policy</a></li>
+            <li><a href="https://wa.link/iwantgamingzoneid" className="hover:text-yellow-400">Responsible Gambling</a></li>
+            <li><a href="https://wa.link/iwantgamingzoneid" className="hover:text-yellow-400">FAQs</a></li>
           </ul>
         </div>
 

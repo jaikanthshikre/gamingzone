@@ -118,7 +118,7 @@ export const Navbar = () => {
             {/* WhatsApp CTA */}
             <div className="relative">
               <a
-                href="https://wa.me/919818462079?text=Hi%2C%20I%20want%20to%20get%20an%20online%20betting%20ID%20on%20GamingZoneBook."
+                href="https://wa.link/iwantgamingzoneid"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative overflow-hidden"

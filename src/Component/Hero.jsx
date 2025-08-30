@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import imageone from "../assets/images/horror.png";
+import imageone from "../assets/images/horror.webp";
 
 const slides = [
   {
@@ -17,7 +17,7 @@ const slides = [
 ];
 
 const whatsappLink =
-  "https://wa.me/919818462079?text=Hi%2C%20I%20am%20interested%20in%20getting%20an%20online%20betting%20ID%20on%20GamingZoneBook.";
+  "https://wa.link/iwantgamingzoneid";
 
 const HeroCarousel = () => {
   const [current, setCurrent] = useState(0);

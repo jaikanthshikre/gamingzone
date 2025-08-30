@@ -1,5 +1,5 @@
 import React from 'react';
-import imageone from "../assets/images/contactimg.png";
+import imageone from "../assets/images/contactimg.webp";
 
 export const Contact = () => {
   return (
@@ -22,7 +22,7 @@ export const Contact = () => {
             <li>✅ Withdrawal & Bonus Queries</li>
           </ul>
           <a
-  href="https://wa.me/919818462079?text=Hi%2C%20I%20want%20to%20get%20an%20online%20betting%20ID%20on%20GamingZoneBook."
+  href="https://wa.link/iwantgamingzoneid"
   target="_blank"
   rel="noopener noreferrer"
   className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500 transition inline-block"

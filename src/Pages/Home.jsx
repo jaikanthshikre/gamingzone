@@ -10,6 +10,8 @@ import FaqSection from '../Component/Faqs'
 import WhyChooseUs from '../Component/Security'
 import { Contact } from '../Component/Contact'
 import TestimonialSection from '../Component/Testimonials'
+import Secondsite from '../Component/Secondsite'
+
 
 
 
@@ -19,7 +21,9 @@ export const Home = () => {
     <>
     <div className='pt-20 mt-9 bg-gradient-to-r from-gray-900 via-red-900 to-gray-900'>
     <HeroCarousel />
+    
      <MarqueeSection/>
+     <Secondsite/>
     <CounterSection/>
    <DesignThinkingSteps/>
   <CardsGrid/>
