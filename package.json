@@ -13,6 +13,7 @@
     "@tailwindcss/vite": "^4.1.8",
     "aos": "^2.3.4",
     "carousel": "^0.0.3",
+    "express": "^5.1.0",
     "lucide-react": "^0.542.0",
     "react-awesome-button": "^7.0.5",
     "react-dom": "^18.2.0",
